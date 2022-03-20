@@ -1,0 +1,42 @@
+﻿@model Crud.Models.EmpModel
+
+
+@{
+    ViewBag.Title = "Add";
+}
+
+@if (ViewBag.id == null)
+{
+    <h1 style="color:red;">Add Employee Details</h1>
+}
+else
+{
+    <h1 style="color:red;">Add Employee Details</h1>
+}
+
+@using (Html.BeginForm("Add", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(a => a.Id)
+    <div class="form-group">
+        <lable>Name :</lable>
+        @Html.TextBoxFor(a => a.Name, new { @class = "form-control", @placeholder = "Enter name.." })
+    </div>
+
+    <div class="form-group">
+        <lable>Email :</lable>
+        @Html.TextBoxFor(a => a.Email, new { @class = "form-control", @placeholder = "Enter name.." })
+    </div>
+
+    <div class="form-group">
+        <lable>Mobile :</lable>
+        @Html.TextBoxFor(a => a.Mobile, new { @class = "form-control", @placeholder = "Enter name.." })
+    </div>
+
+    <div class="form-group">
+        <lable>City :</lable>
+        @Html.TextBoxFor(a => a.City, new { @class = "form-control", @placeholder = "Enter name.." })
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="reset" class="btn btn-success">Re-set</button>
+}
